@@ -3,11 +3,11 @@
     "description": "Escola Headless LMS Pencil Spaces integration",
     "type": "package",
     "require": {
-        "php": "^8.0|^8.1",
+        "php": ">=8.0",
         "escolalms/auth": "^0",
         "escolalms/core": "^1",
         "escolalms/settings": "^0",
-        "laravel/framework": "^8|^9"
+        "laravel/framework": "^8|^9|^10"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.0",
