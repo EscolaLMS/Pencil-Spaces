@@ -4,6 +4,10 @@ namespace EscolaLms\PencilSpaces;
 
 use EscolaLms\PencilSpaces\Providers\AuthServiceProvider;
 use EscolaLms\PencilSpaces\Providers\SettingsServiceProvider;
+use EscolaLms\PencilSpaces\Repositories\Contracts\UserRepositoryContract;
+use EscolaLms\PencilSpaces\Repositories\UserRepository;
+use EscolaLms\PencilSpaces\Services\Contracts\PencilSpacesServiceContract;
+use EscolaLms\PencilSpaces\Services\PencilSpacesService;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -13,9 +17,13 @@ class EscolaLmsPencilSpacesServiceProvider extends ServiceProvider
 {
     public const CONFIG_KEY = 'pencil_spaces';
 
-    public const SERVICES = [];
+    public const SERVICES = [
+        PencilSpacesServiceContract::class => PencilSpacesService::class,
+    ];
 
-    public const REPOSITORIES = [];
+    public const REPOSITORIES = [
+        UserRepositoryContract::class => UserRepository::class,
+    ];
 
     public $singletons = self::SERVICES + self::REPOSITORIES;
 
@@ -27,7 +35,6 @@ class EscolaLmsPencilSpacesServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__ . '/routes.php');
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         $this->mergeConfigFrom(__DIR__ . '/../config/config.php', self::CONFIG_KEY);
 
