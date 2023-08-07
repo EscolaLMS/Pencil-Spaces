@@ -26,7 +26,7 @@ class PencilSpace extends Facade
         Config::set(EscolaLmsPencilSpacesServiceProvider::CONFIG_KEY . '.api_url', $faker->url);
 
         Http::fake([
-            'users/*/authorize' => Http::response(['url' => $faker->url]),
+            'users/*/authorize*' => Http::response(['url' => $faker->url]),
             'spaces/create' => Http::response(['link' => $faker->url, 'spaceId' => $faker->uuid]),
             'users/createAPIUser' => Http::response(['userId' => $faker->uuid, 'email' => $faker->email])
         ]);
