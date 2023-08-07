@@ -29,6 +29,7 @@ class TestCase extends CoreTestCase
             ...parent::getPackageProviders($app),
             PassportServiceProvider::class,
             PermissionServiceProvider::class,
+            EscolaLmsAuthServiceProvider::class,
             EscolaLmsPencilSpacesServiceProvider::class,
         ];
     }
