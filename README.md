@@ -1,5 +1,6 @@
 # Pencil-Spaces
 
+[![swagger](https://img.shields.io/badge/documentation-swagger-green)](https://escolalms.github.io/Pencil-Spaces/)
 [![codecov](https://codecov.io/gh/EscolaLMS/Pencil-Spaces/branch/main/graph/badge.svg?token=NRAN4R8AGZ)](https://codecov.io/gh/EscolaLMS/Pencil-Spaces)
 [![phpunit](https://github.com/EscolaLMS/Consultation-Access/actions/workflows/test.yml/badge.svg)](https://github.com/EscolaLMS/Pencil-Spaces/actions/workflows/test.yml)
 [![downloads](https://img.shields.io/packagist/dt/escolalms/pencil-spaces)](https://packagist.org/packages/escolalms/pencil-spaces)
@@ -73,7 +74,7 @@ An account in Pencil Space will be created for users who don't have one. The tab
 
 ## Endpoints
 
-This package doesn't have endpoints. 
+The endpoints are defined in [![swagger](https://img.shields.io/badge/documentation-swagger-green)](https://escolalms.github.io/Pencil-Spaces/)
 
 ## Tests
 
