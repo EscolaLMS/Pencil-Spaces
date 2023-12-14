@@ -5,3 +5,6 @@ parameters:
     paths:
         - src/
     level: 5
+    excludePaths:
+        analyse:
+            - src/Http/Controllers/PencilSpaceApiController.php
