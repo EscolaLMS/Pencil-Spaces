@@ -11,7 +11,7 @@ class PencilSpaceApiController extends EscolaLmsBaseController
 {
     public function login(LoginPencilSpaceRequest $request): JsonResponse
     {
-        $url = PencilSpace::getDirectLoginUrl($request->user()->getKey(), $request->getUrl());
+        $url = PencilSpace::getDirectLoginUrl($request->getUserId(), $request->getUrl());
 
         return $this->sendResponse(['url' => $url]);
     }
