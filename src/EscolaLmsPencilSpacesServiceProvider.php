@@ -2,6 +2,7 @@
 
 namespace EscolaLms\PencilSpaces;
 
+use EscolaLms\Auth\EscolaLmsAuthServiceProvider;
 use EscolaLms\PencilSpaces\Providers\AuthServiceProvider;
 use EscolaLms\PencilSpaces\Providers\SettingsServiceProvider;
 use EscolaLms\PencilSpaces\Repositories\Contracts\UserRepositoryContract;
@@ -31,10 +32,12 @@ class EscolaLmsPencilSpacesServiceProvider extends ServiceProvider
     {
         $this->app->register(AuthServiceProvider::class);
         $this->app->register(SettingsServiceProvider::class);
+        $this->app->register(EscolaLmsAuthServiceProvider::class);
     }
 
     public function boot()
     {
+        $this->loadRoutesFrom(__DIR__ . '/routes.php');
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         $this->mergeConfigFrom(__DIR__ . '/../config/config.php', self::CONFIG_KEY);
 

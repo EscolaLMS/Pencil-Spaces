@@ -3,6 +3,7 @@
 namespace EscolaLms\PencilSpaces\Common;
 
 use EscolaLms\PencilSpaces\EscolaLmsPencilSpacesServiceProvider;
+use EscolaLms\PencilSpaces\Exceptions\InvalidPencilSpaceConfigurationException;
 use Exception;
 use Illuminate\Support\Facades\Config;
 
@@ -33,7 +34,7 @@ class PencilSpacesRestClient extends RestClient
     private function validConfiguration(): void
     {
         if (!$this->getApiUrl() || !$this->getApiKey()) {
-            throw new Exception('Pencil Spaces configuration is invalid');
+            throw new InvalidPencilSpaceConfigurationException();
         }
     }
 }
