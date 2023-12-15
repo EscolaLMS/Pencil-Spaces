@@ -1,0 +1,77 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "EscolaLMS",
+        "version": "0.0.1"
+    },
+    "paths": {
+        "/api/pencil-spaces/login": {
+            "post": {
+                "tags": [
+                    "Pencil Spaces"
+                ],
+                "summary": "Generate a direct login link",
+                "operationId": "f0b79230e5f1a245fc65ab3a3fbf91fb",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginPencilSpaceRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successfull operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "url": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "passport": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "LoginPencilSpaceRequest": {
+                "required": [
+                    "redirect_url"
+                ],
+                "properties": {
+                    "redirect_url": {
+                        "type": "string",
+                        "example": "https://my.pencilapp.com"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
